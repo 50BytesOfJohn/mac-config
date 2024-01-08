@@ -1,9 +1,9 @@
 return {
 	{
-		"nyoom-engineering/oxocarbon.nvim",
+		"crispybaccoon/evergarden",
 		config = function()
 			vim.opt.background = "dark"
-			vim.cmd.colorscheme "oxocarbon"
+			vim.cmd.colorscheme("evergarden")
 		end,
 	},
 }
