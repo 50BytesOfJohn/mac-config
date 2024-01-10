@@ -12,6 +12,9 @@ end
 
 -- This is where you actually apply your config choices
 
+-- Font
+config.font = wezterm.font("Cartograph CF", { weight = "Regular" })
+
 -- Colorscheme
 config.color_scheme = "rose-pine"
 
