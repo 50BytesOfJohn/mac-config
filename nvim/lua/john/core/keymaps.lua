@@ -16,4 +16,23 @@ keymap.set("n", "<S-Tab>", "<cmd>tabclose<CR>", { desc = "Close current tab" }) 
 
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" }) -- save file
 
-keymap.set("n", "<leader>b", ":JABSOpen<CR>", { desc = "Open buffer list" }) -- open buffer list
+keymap.set("n", "<leader>bj", ":JABSOpen<CR>", { desc = "Open buffer list" }) -- open buffer list
+
+-- buffers (tabs) mappings
+-- barbar plugin
+keymap.set("n", "<leader>c", "<cmd>BufferClose<CR>", { desc = "Close current buffer" })
+
+-- Set mapping for <leader>bd to sort by directory
+keymap.set("n", "<leader>bd", "<cmd>BufferOrderByDirectory<CR>", { desc = "Sort buffers by directory" })
+
+-- Set mapping for <leader>bc to close all but current one
+keymap.set("n", "<leader>bc", "<cmd>BufferCloseAllButCurrent<CR>", { desc = "Close all but current buffer" })
+
+-- Set [b to move to previous select buffer
+keymap.set("n", "[b", "<cmd>BufferPrevious<CR>", { desc = "Move to previous buffer" })
+
+-- Set ]b to move to next select buffer
+keymap.set("n", "]b", "<cmd>BufferNext<CR>", { desc = "Move to next buffer" })
+
+-- Set <leader>bp to pick buffer magially
+keymap.set("n", "<leader>bp", "<cmd>BufferPick<CR>", { desc = "Pick buffer" })

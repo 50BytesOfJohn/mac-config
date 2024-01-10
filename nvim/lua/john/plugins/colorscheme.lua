@@ -1,9 +1,17 @@
 return {
 	{
-		"crispybaccoon/evergarden",
+		"rose-pine/neovim",
+		opts = {
+			variant = "main",
+
+			styles = {
+				bold = true,
+				italic = true,
+				transparency = true,
+			},
+		},
 		config = function()
-			vim.opt.background = "dark"
-			vim.cmd.colorscheme("evergarden")
+			vim.cmd.colorscheme("rose-pine")
 		end,
 	},
 }
