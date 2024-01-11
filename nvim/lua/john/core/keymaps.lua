@@ -11,8 +11,8 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -- open ranger floating window (rnvimr)
 keymap.set("n", "<leader>o", ":RnvimrToggle<CR>", { desc = "Open ranger floating window" })
 
-keymap.set("n", "<Tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap.set("n", "<S-Tab>", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<Tab>", "<cmd>BufferNext<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<S-Tab>", "<cmd>BufferClose<CR>", { desc = "Close current tab" }) -- close current tab
 
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" }) -- save file
 
