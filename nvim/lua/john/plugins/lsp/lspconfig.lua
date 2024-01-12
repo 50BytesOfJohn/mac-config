@@ -2,12 +2,15 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
-		local coq = require("coq")
+
+		-- import cmp-nvim-lsp plugin
+		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -67,6 +70,8 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		local capabilities = cmp_nvim_lsp.default_capabilities()
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
@@ -74,31 +79,42 @@ return {
 		})
 
 		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup(coq.lsp_ensure_capabilities({
+		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		}))
+		})
+
+		-- configure typescript server with plugin
+		lspconfig["eslint"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["biome"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
 		-- configure css server
-		lspconfig["cssls"].setup(coq.lsp_ensure_capabilities({
+		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		}))
+		})
 
 		-- configure tailwindcss server
-		lspconfig["tailwindcss"].setup(coq.lsp_ensure_capabilities({
+		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		}))
+		})
 
 		-- configure python server
-		lspconfig["pyright"].setup(coq.lsp_ensure_capabilities({
+		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-		}))
+		})
 
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup(coq.lsp_ensure_capabilities({
+		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
@@ -116,6 +132,6 @@ return {
 					},
 				},
 			},
-		}))
+		})
 	end,
 }

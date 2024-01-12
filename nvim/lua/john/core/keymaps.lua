@@ -36,3 +36,6 @@ keymap.set("n", "]b", "<cmd>BufferNext<CR>", { desc = "Move to next buffer" })
 
 -- Set <leader>bp to pick buffer magially
 keymap.set("n", "<leader>bp", "<cmd>BufferPick<CR>", { desc = "Pick buffer" })
+
+-- File tree
+keymap.set("n", "<leader>e", ":Fern . -reveal=% -drawer -toggle<CR>", { desc = "Toggle file tree" })
