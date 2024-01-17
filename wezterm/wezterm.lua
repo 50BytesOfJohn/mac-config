@@ -34,5 +34,46 @@ config.window_padding = {
 	bottom = 0,
 }
 
+-----------------
+-- Keys ---------
+
+-- Split panes
+config.keys = {
+	{
+		key = '"',
+		mods = "SHIFT|ALT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "%",
+		mods = "SHIFT|ALT",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "H",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "J",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+	},
+	{ key = "K", mods = "CMD|SHIFT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	{
+		key = "L",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+	},
+	{ key = "8", mods = "CTRL", action = wezterm.action.PaneSelect },
+	{
+		key = "0",
+		mods = "CTRL",
+		action = wezterm.action.PaneSelect({
+			mode = "SwapWithActive",
+		}),
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config

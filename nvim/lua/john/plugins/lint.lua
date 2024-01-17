@@ -5,10 +5,10 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			typescript = { "eslint" },
-			typescriptreact = { "eslint" },
-			javascript = { "eslint" },
-			javascriptreact = { "eslint" },
+			typescript = { "biomejs", "eslint" },
+			typescriptreact = { "biomejs", "eslint" },
+			javascript = { "biomejs", "eslint" },
+			javascriptreact = { "biomejs", "eslint" },
 			lua = { "luacheck" },
 			sh = { "shellcheck" },
 			markdown = { "markdownlint" },

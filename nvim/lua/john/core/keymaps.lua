@@ -16,8 +16,6 @@ keymap.set("n", "<S-Tab>", "<cmd>BufferClose<CR>", { desc = "Close current tab" 
 
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" }) -- save file
 
-keymap.set("n", "<leader>bj", ":JABSOpen<CR>", { desc = "Open buffer list" }) -- open buffer list
-
 -- buffers (tabs) mappings
 -- barbar plugin
 keymap.set("n", "<leader>c", "<cmd>BufferClose<CR>", { desc = "Close current buffer" })
@@ -39,3 +37,4 @@ keymap.set("n", "<leader>bp", "<cmd>BufferPick<CR>", { desc = "Pick buffer" })
 
 -- File tree
 keymap.set("n", "<leader>e", ":Fern . -reveal=% -drawer -toggle<CR>", { desc = "Toggle file tree" })
+keymap.set("n", "<S-e>", ":Fern . -reveal=% -drawer<CR>", { desc = "Open / Focus file tree" })
